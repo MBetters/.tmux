@@ -292,3 +292,14 @@ tmux_conf_copy_to_os_clipboard=false
 
 # move status line to top
 #set -g status-position top
+
+# Close windows and panes w/o confirmation
+bind-key & kill-window
+bind-key x kill-pane
+
+# Break pane into new window
+bind-key B break-pane
+
+# Move windows
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
