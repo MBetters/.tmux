@@ -15,7 +15,7 @@ Requirements:
   - outside of tmux, `$TERM` must be set to `xterm-256color`
 
 To install, run the following from your terminal: (you may want to backup your
-existing `~/.tmux.conf` first)
+existing `~/.config/tmux/.tmux.conf` first)
 
 ```
 $ cd
@@ -24,7 +24,7 @@ $ ln -s -f .tmux/.tmux.conf
 $ cp .tmux/.tmux.conf.local .
 ```
 
-Then proceed to [customize] your `~/.tmux.conf.local` copy.
+Then proceed to [customize] your `~/.config/tmux/.tmux.conf.local` copy.
 
 [customize]: #enabling-the-powerline-look
 
@@ -59,7 +59,7 @@ Troubleshooting
    This can also happen on macOS when using iTerm2 and "Use Unicode version 9
    character widths" is enabled in `Preferences... > Profiles > Text`
 
-   For that reason, the default `~/.tmux.conf.local` file stopped using Unicode
+   For that reason, the default `~/.config/tmux/.tmux.conf.local` file stopped using Unicode
    characters for which width changed in between Unicode 8.0 and 9.0 standards,
    as well as Emojis.
 
@@ -68,14 +68,14 @@ Troubleshooting
 
    First, you don't need to install Powerline. You only need fonts patched with
    Powerline symbols or the standalone `PowerlineSymbols.otf` font. Then make
-   sure your `~/.tmux.conf.local` copy uses the right code points for
+   sure your `~/.config/tmux/.tmux.conf.local` copy uses the right code points for
    `tmux_conf_theme_left_separator_XXX` values.
 
  - **I'm using Bash On Windows (WSL), colors and Powerline look are broken.**
 
    There is currently a [bug][1681] in the new console powering Bash On Windows
    preventing text attributes (bold, underscore, ...) to combine properly with
-   colors. The workaround is to search your `~/.tmux.conf.local` copy and
+   colors. The workaround is to search your `~/.config/tmux/.tmux.conf.local` copy and
    replace attributes with `'none'`.
 
    Also, until Window's console replaces its GDI based render with a DirectWrite
@@ -139,7 +139,7 @@ list of key bindings:
 
 This configuration uses the following bindings:
 
- - `<prefix> e` opens `~/.tmux.conf.local` with the editor defined by the
+ - `<prefix> e` opens `~/.config/tmux/.tmux.conf.local` with the editor defined by the
    `$EDITOR` environment variable (defaults to `vim` when empty)
  - `<prefix> r` reloads the configuration
  - `C-l` clears both the screen and the tmux history
@@ -186,13 +186,13 @@ Configuration
 -------------
 
 While this configuration tries to bring sane default settings, you may want to
-customize it further to your needs. Instead of altering the `~/.tmux.conf` file
-and diverging from upstream, the proper way is to edit the `~/.tmux.conf.local`
+customize it further to your needs. Instead of altering the `~/.config/tmux/.tmux.conf` file
+and diverging from upstream, the proper way is to edit the `~/.config/tmux/.tmux.conf.local`
 file.
 
-Please refer to the default `~/.tmux.conf.local` file to know more about
+Please refer to the default `~/.config/tmux/.tmux.conf.local` file to know more about
 variables you can adjust to alter different behaviors. Pressing `<prefix> e`
-will open `~/.tmux.conf.local` with the editor defined by the `$EDITOR`
+will open `~/.config/tmux/.tmux.conf.local` with the editor defined by the `$EDITOR`
 environment variable (defaults to `vim` when empty).
 
 ### Enabling the Powerline look
@@ -221,7 +221,7 @@ To make use of these symbols, there are several options:
 
 Please see the [Powerline manual] for further details.
 
-Then edit the `~/.tmux.conf.local` file (`<prefix> e`) and adjust the following
+Then edit the `~/.config/tmux/.tmux.conf.local` file (`<prefix> e`) and adjust the following
 variables:
 
 ```
@@ -235,7 +235,7 @@ tmux_conf_theme_right_separator_sub=''
 Contrary to the first iterations of this configuration, by now you have total
 control on the content and order of `status-left` and `status-right`.
 
-Edit the `~/.tmux.conf.local` file (`<prefix> e`) and adjust the
+Edit the `~/.config/tmux/.tmux.conf.local` file (`<prefix> e`) and adjust the
 `tmux_conf_theme_status_left` and `tmux_conf_theme_status_right` variables to
 your own preferences.
 
